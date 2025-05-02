@@ -1,12 +1,11 @@
 # HarpyHSP
 
 **HarpyHSP (Harpy Home Server Platform)** is a modular, dockerized server architecture made to enable free and open source ressources on accessible hardware or unused pc's. Harpy is built for privacy, automation, AI access, and media control.  
-To enable a high feature set and performamce, harpy is designed to run on a split architecture: a powerful *Artillery Server* (performant machine for heavier workloads) and a reliable *Endurance Server* (reliable and efficient machine for clientside). This way you can use one or multiple old machines, such as your old gaming laptop, to process LLM inference and Media storage, while a more efficient and reliable computer, such as a Rasperry PI, maintains connections, security and client side interactions.
+
+ To enable a high feature set and performamce, harpy is designed to run on a split architecture: a powerful *Artillery Server* (performant machine for heavier workloads) and a reliable *Endurance Server* (reliable and efficient machine for clientside). 
+ This way you can use one or multiple old machines, such as your old gaming laptop, to process LLM inference and Media storage, while a more efficient and reliable computer, such as a Rasperry PI, maintains connections, security and client side interactions.
+
 Though designed with split-architecture in mind, Harpy can also be hosted on one instance such as a dedicated server machine or PC.
-
-A modular suite of tools for your local server, and accessible anywhere
-
-
 
 ---
 
