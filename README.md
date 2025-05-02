@@ -13,7 +13,13 @@ Harpy allows interaction with any API, but it includes modified versions or even
 
 ### Songbird AI
 
-— Run a local LLM with 4-bit quantization.
+>Songbird is a lightweight yet extremely competent LLM. Based on Qwen3, Somgbird is Fine-tuned and improved with DRL, and is coupled with an intuitive interface for chatting.
+
+SongbirdAI is an AI model and inference tool, inspired by the Cyberpunk 2077 game. Trough Fine-Tuning on Custom(link to datasets) and Public Datasets(link to public datasets) and Deep Reinforcement Learning, songbird is improved and trained for critical thinking, coding and creativity. 
+
+Songbird is trained on the [Qwen3-4b(MoE)](https://github.com/QwenLM/Qwen3?tab=readme-ov-file#qwen3) model, which carries quite a punch with very impressive performance. 
+
+Songbird is always improving, with more specialized data and training Songbirds becomes more powerful. Additionlly Songbird is also scheduled to adapt other Qwen model sizes and different model families.
 
 ### AdGuard Home
 
