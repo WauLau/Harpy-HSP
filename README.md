@@ -25,7 +25,7 @@ Songbird is always improving, with more specialized data and training Songbirds 
 
 Network-wide ad/tracker blocking DNS.
 
-### ![image](https://github.com/user-attachments/assets/0217c582-f9de-4751-91cf-0ecc541c2404) Vulture
+### 🦅 Vulture
 
 — Self-hosted streaming/torrent solution.
 
