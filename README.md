@@ -1,4 +1,4 @@
-# HarpyHSP
+# 🪽HarpyHSP
 
 > *HarpyHSP (Harpy Home Server Platform)* is a modular, dockerized server architecture made to enable free and open source ressources on accessible hardware or unused pc's. Harpy is built for privacy, automation, AI access, and media control.
 
@@ -8,10 +8,10 @@ This way you can use one or multiple old machines, such as your old gaming lapto
 
 Though designed with split-architecture in mind, Harpy can also be hosted on one instance such as a dedicated server machine or PC.
 
-## Features
+## ⚙️ Features
 Harpy allows interaction with any API, but it includes modified versions or even fully new pipelines custom built for Harpy and its Architecture. If you want to add your own API or docker image, see the 'Adding Custom Tools' section.
 
-### Songbird AI
+### 🦜 Songbird AI
 
 >Songbird is a lightweight yet extremely competent LLM. Based on Qwen3, Somgbird is Fine-tuned and improved with DRL, and is coupled with an intuitive interface for chatting.
 
@@ -21,27 +21,24 @@ Songbird is trained on the [Qwen3-4b(MoE)](https://github.com/QwenLM/Qwen3?tab=r
 
 Songbird is always improving, with more specialized data and training Songbirds becomes more powerful. Additionlly Songbird is also scheduled to adapt other Qwen model sizes and different model families.
 
-### AdGuard Home
+### 🛡️ PrivacyNest
 
 Network-wide ad/tracker blocking DNS.
 
-### ProtonVPN Tunnel
-
-\- Secure outbound traffic.
-
-### Media Server
+### ![image](https://github.com/user-attachments/assets/0217c582-f9de-4751-91cf-0ecc541c2404) Vulture
 
 — Self-hosted streaming/torrent solution.
 
-### Pentest Toolkit
+### 🔎📦 Warbler
 
 — Web UI for recon and analysis tools.
 
-### Unified Dashboard — Single web app interface for all tools.
+### 🖥️ Unified Dashboard 
+- Single web app interface for all tools.
 
 \---
 
-## Architecture
+## 🧱 Architecture
 
 \*_Artillery Server (Laptop):_\*
 
@@ -69,7 +66,7 @@ Network-wide ad/tracker blocking DNS.
 
 \## Setup & Deployment
 
-### Requirements
+### 🗃️ Requirements
 
 \- Laptop with Docker & Docker Compose
 
@@ -79,7 +76,7 @@ Network-wide ad/tracker blocking DNS.
 
 \- Access to GitHub repo & CLI
 
-### Local Dev Setup
+### 🔨 Installation and Setup
 
 \`\`\`bash
 
