@@ -40,7 +40,8 @@ Network-wide ad/tracker blocking DNS.
 
 ## 🧱 Architecture
 
->HarpyHSP/
+```
+HarpyHSP/
 ├── Artillery Server/
 │   └── Inference with Songbird
 │   └── Vulture (Storage, Torrenting and Transcoding)
@@ -49,12 +50,13 @@ Network-wide ad/tracker blocking DNS.
 │   └── PrivacyNest(Adguard Home DNS, ProtonVPN and reverse proxy)
 │   └── Warbler (Pentesting and Wifi Analysis)
 │   └── Clientside User Interface(public connection and GUI)
->
->Stack/
+
+Stack/
 ├── Docker & Docker Compose
 ├── NGINX (Reverse Proxy)
 ├── WireGuard (Endurance ↔ Arrtillery)
 ├── Prometheus + Grafana (monitoring)
+```
 
 ### 🗃️ Requirements
 
