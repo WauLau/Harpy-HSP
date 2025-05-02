@@ -40,39 +40,29 @@ Network-wide ad/tracker blocking DNS.
 
 ## 🧱 Architecture
 
-\*_Artillery Server (Laptop):_\*
-
-\- Runs heavy-duty services: AI, media processing, torrenting.
-
-\- Interfaces via secure tunnel with Pi.
-
-\*_Endurance Server (Raspberry Pi 5):_\*
-
-\- Hosts reverse proxy, frontend, VPN, DNS.
-
-\- Maintains uptime and acts as the main entry point.
-
-\*_Stack:_\*
-
-\- Docker & Docker Compose
-
-\- NGINX (reverse proxy)
-
-\- WireGuard (Pi ↔ Laptop)
-
-\- Prometheus + Grafana (monitoring, later)
-
-\---
+>HarpyHSP/
+├── Artillery Server/
+│   └── Inference with Songbird
+│   └── Vulture (Storage, Torrenting and Transcoding)
+│   └── Interfacing and Connections through Endurance Server
+├── Endurance Server/
+│   └── PrivacyNest(Adguard Home DNS, ProtonVPN and reverse proxy)
+│   └── Warbler (Pentesting and Wifi Analysis)
+│   └── Clientside User Interface(public connection and GUI)
+>
+>Stack/
+├── Docker & Docker Compose
+├── NGINX (Reverse Proxy)
+├── WireGuard (Endurance ↔ Arrtillery)
+├── Prometheus + Grafana (monitoring)
 
 ### 🗃️ Requirements
 
-\- Laptop with Docker & Docker Compose
+- Performant PC, such as a Laptop with Docker & Docker Compose
 
-\- Raspberry Pi 5 (16GB recommended)
+- Reliable Mini PC, such as a Raspberry Pi 5 (16GB recommended)
 
-\- NVMe SSD + power-stable PSU
-
-\- Access to GitHub repo & CLI
+- Access to GitHub repo & CLI
 
 ### 🔨 Installation and Setup
 
