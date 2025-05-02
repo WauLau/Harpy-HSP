@@ -64,8 +64,6 @@ Network-wide ad/tracker blocking DNS.
 
 \---
 
-\## Setup & Deployment
-
 ### 🗃️ Requirements
 
 \- Laptop with Docker & Docker Compose
@@ -78,10 +76,13 @@ Network-wide ad/tracker blocking DNS.
 
 ### 🔨 Installation and Setup
 
-\`\`\`bash
+```bash
 
-git clone [https://github.com/yourname/HarpyHSP.git](https://github.com/yourname/HarpyHSP.git)
+# Download Repo
+git clone https://github.com/WauLau/HarpyHSP.git
 
+# Build and Deploy HarpyHSP
 cd HarpyHSP
+docker compose up --build
 
-docker-compose up --build
+```
