@@ -1,0 +1,12 @@
+services:
+  songbird:
+    build: ./artillery/songbird
+    ports:
+      - "${SONGBIRD_PORT}:7860"
+    restart: unless-stopped
+
+  privacynest:
+    build: ./endurance/privacynest
+    ports:
+      - "${PRIVACYNEST_PORT}:3000"
+    restart: unless-stopped
