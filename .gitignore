@@ -5,4 +5,14 @@ __pycache__/
 *.db
 .idea/
 .vscode/
-.configs/
+
+# AdGuard Home runtime data & config
+configs/adguard/conf/AdGuardHome.yaml
+configs/adguard/work/
+
+# VPN config (private keys)
+configs/protonvpn/*.conf
+
+# Generic secrets
+*.key
+*.pem
