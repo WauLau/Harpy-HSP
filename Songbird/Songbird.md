@@ -1,2 +1,0 @@
-Songbird is an AI model inspired by futurewave and the Cyberpunk 2077 game. Songbird has been trained for critical thinking, coding and creativity. All this with a coating of slang and meta cyber and 'hacker' terms
-Songbird is a based on the Gemma3-4b model, and is fine-tuned and also made smart with Deep Reinforcemnt Learning (Reasoning), making Songbird a lightweight yet extremely competent LLM Model.
