@@ -1,5 +1,5 @@
 # Clone the repo
-git clone https://github.com/YourUsername/HarpyHSP.git
+git clone https://github.com/WauLau/HarpyHSP.git
 cd HarpyHSP
 
 # Copy environment template and set your variables
