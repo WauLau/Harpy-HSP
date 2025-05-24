@@ -1,24 +1,86 @@
 services:
-  songbird:
-    build: ./artillery/songbird
-    ports:
-      - "${SONGBIRD_PORT}:7860"
-    restart: unless-stopped
+#  songbird:
+#    build: ./artillery/songbird
+#    ports:
+#      - "${SONGBIRD_PORT}:7860"
+#    restart: unless-stopped
 
-  privacynest:
-    build: ./endurance/privacynest
-    ports:
-      - "${PRIVACYNEST_PORT}:3000"
-    restart: unless-stopped
+#  privacynest:
+#   build: ./endurance/privacynest
+#    ports:
+#      - "${PRIVACYNEST_PORT}:3000"
+#    restart: unless-stopped
 
   adguard:
     image: adguard/adguardhome:latest
     container_name: adguard
-    restart: unless-stopped
     ports:
-      - "53:53/tcp"     # DNS
-      - "53:53/udp"     # DNS
-      - "${PRIVACYNEST_PORT}:3000"  # Admin UI
+      # Expose port 53 on TCP and UDP for DNS queries
+      - "53:53/tcp"
+      - "53:53/udp"
+
+      # Expose port 80 on TCP for HTTP web interface
+      - "3000:3000/tcp"
+
+      # Expose port 853 on TCP for DNS-over-TLS (DoT)
+      - "853:853/tcp"
+
+      # Expose port 784 on UDP for DNS-over-QUIC (DoQ)
+      - "784:784/udp"
+
+      # Expose port 853 on UDP for DNS-over-DTLS (DoT)
+      - "853:853/udp"
     volumes:
       - ./configs/adguard/work:/opt/adguardhome/work
       - ./configs/adguard/conf:/opt/adguardhome/conf
+    healthcheck:
+      test: ["CMD-SHELL", "nslookup example.com 127.0.0.1 || exit 1"]
+      interval: 3s
+      timeout: 3s
+      retries: 3
+    restart: unless-stopped
+
+  vpn-client: #Connect to a wireguard tunnel. Typically a vpn provider like ProtonVPN, OpenVPN or other services with WiregGuard
+    depends_on:
+      adguard:
+        condition: service_healthy
+    image: lscr.io/linuxserver/wireguard:latest
+    container_name: vpn-client
+    # Give access to kernel module + network admin
+    cap_add:
+      - NET_ADMIN       # manipulate network interfaces :contentReference[oaicite:5]{index=5}
+      - SYS_MODULE      # load WireGuard kernel module :contentReference[oaicite:6]{index=6}
+    network_mode: host  # wg0 gets created on host :contentReference[oaicite:7]{index=7}
+    environment:
+      PUID: "${PUID}"       # file ownership (match host user) :contentReference[oaicite:8]{index=8}
+      PGID: "${PGID}"       # group ID :contentReference[oaicite:9]{index=9}
+      TZ: "${TimeZone}"
+    volumes:
+      - ./configs/wg_client:/config # contains wg0.conf :contentReference[oaicite:11]{index=11}
+      - /lib/modules:/lib/modules      # host’s WireGuard module :contentReference[oaicite:12]{index=12}
+    restart: unless-stopped
+
+#  vpn-server: #Open remote connections to access the VPN and AdguardHome on remote networks
+#    depends_on:
+#      adguard:
+#        condition: service_healthy
+#    image: lscr.io/linuxserver/wireguard:latest
+#    container_name: vpn-server
+#    cap_add:
+#      - NET_ADMIN
+#      - SYS_MODULE
+#    volumes:
+#      - ./configs/wg_server:/config
+#      - /lib/modules:/lib/modules
+#    environment:
+#      - PUID=1000
+#      - PGID=1000
+#      - TZ=Europe/Copenhagen
+#      - SERVERURL=185.107.56.71
+#      - SERVERPORT=51820
+#      - PEERS=0 # no auto peers
+#      - PEERDNS=192.168.1.20
+#    sysctls:
+#      - net.ipv4.ip_forward=1
+#      - net.ipv6.conf.all.forwarding=1
+#    restart: unless-stopped
