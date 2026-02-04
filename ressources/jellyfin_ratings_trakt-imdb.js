@@ -296,12 +296,6 @@ function insert(target, type, tmdbId, episodeInfo) {
 		    container.appendChild(span);
           });
         }
-
-        const title = container.dataset.originalTitle;
-        const year  = parseInt(container.dataset.year, 10);
-        if (title && year) {
-          fetchKinopoiskRating(title, year, type, container);
-        }
       }
     });
   }
