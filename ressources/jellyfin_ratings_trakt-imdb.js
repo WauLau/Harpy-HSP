@@ -173,7 +173,7 @@ function processLink(link) {
   const ep = link.href.match(/themoviedb\.org\/tv\/(\d+)\/season\/(\d+)\/episode\/(\d+)/);
   
     // Затем — ссылку сезона (при этом исключаем эпизод)
-  const sn = !ep && link.href.match(/themoviedb\.org\/tv\/(\d+)\/season\/(\d+)(?!\/episode)/);
+  const sn = !ep && link.href.match(/themoviedb.org\/tv\/(\d+)\/season\/(\d+)(?!\/episode)/);
 
   // Базовый разбор для movie/tv
   const m = link.href.match(/themoviedb\.org\/(movie|tv)\/(\d+)/);
@@ -233,7 +233,7 @@ function insert(target, type, tmdbId, episodeInfo) {
   container.style.cssText = 'display:inline-flex; align-items:center; margin-left:6px;';
   target.insertAdjacentElement('afterend', container);
 
-  // <<< ВАЖНО: следим за наполнением контейнера и скрываем звёзды только когда есть данные >>>
+  // <<< ВАЖНО: следим за на��олнением контейнера и скрываем звёзды только когда есть данные >>>
   watchRatingContainer(container);
   
    // >>> Если это страница ЭПИЗОДА — грузим ТОЛЬКО рейтинг серии TMDb и выходим
@@ -246,7 +246,7 @@ function insert(target, type, tmdbId, episodeInfo) {
 //   if (episodeInfo?.isSeason) {
 //	fetchTmdbSeasonRating(episodeInfo.tvId, episodeInfo.season, container);
 //	return;
-  }
+//   }
 
   // дальше — ваш существующий код загрузки рейтингов
   fetchMDBList(type, tmdbId, container);
@@ -299,5 +299,4 @@ function insert(target, type, tmdbId, episodeInfo) {
       }
     });
   }
-}
 })();
