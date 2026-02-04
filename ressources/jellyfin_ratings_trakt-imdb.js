@@ -8,11 +8,6 @@ if (typeof GM_xmlhttpRequest === 'undefined') {
   ];
   const DIRECT_DOMAINS = [
     'api.mdblist.com',
-    'graphql.anilist.co',
-    'query.wikidata.org',
-    'www.google.com',
-    'kinopoiskapiunofficial.tech',
-	'api.themoviedb.org' 
   ];
 
   window.GM_xmlhttpRequest = function({ method = 'GET', url, headers = {}, data, onload, onerror }) {
@@ -52,8 +47,8 @@ if (typeof GM_xmlhttpRequest === 'undefined') {
 
   // === API Keys ===
   const MDBLIST_API_KEY    = 'api_key';
-  const KINOPOISK_API_KEY  = 'api_key';
-  const TMDB_API_KEY       = 'api_key';
+//  const KINOPOISK_API_KEY  = 'api_key';
+//  const TMDB_API_KEY       = 'api_key';
 
   // === Logos ===
   const LOGO = {
